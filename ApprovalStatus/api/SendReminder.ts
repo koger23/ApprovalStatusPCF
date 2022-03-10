@@ -48,11 +48,12 @@ export const SendReminder = async (
     var emailId = await context.webAPI.createRecord("email", email);
     context.navigation.openForm({
       entityName: "email",
-      entityId: emailId.id,
+      entityId: emailId.id.guid,
       openInNewWindow: true,
     });
   } catch (error) {
     console.error(error);
+    // @ts-ignore
     alert(error.message);
   }
 };

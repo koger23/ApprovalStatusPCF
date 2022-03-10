@@ -42,8 +42,10 @@ export class FlowLoader {
         message: "",
       });
     } catch (error) {
+      // @ts-ignore
       let errorMessage = `an error just occurred: ${error.message}`;
       if (
+        // @ts-ignore
         error.message
           .toString()
           .indexOf(
